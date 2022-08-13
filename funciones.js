@@ -52,73 +52,42 @@ const pepe= document.getElementById("amor");
 
          }  )
    
+         class Producto {
+            constructor(id, nombre, marca, precio , stock, img, alt) {
+                this.id = id
+                this.nombre = nombre
+                this.marca = marca
+                this.precio = precio
+                this.stock = stock
+                this.img = img
+                this.alt= alt
+            }
+        }
+        
+        const producto1 = new Producto(1, "Libro De Tarot + Mazo Ilustrado", "Jo. Scharegorodskyg", 6900, 10, "./mult/tarotMazoJo.webp", "libro de tarot con su mazo")
+        const producto2 = new Producto(2, "Oráculo Flores Místicas", "Cápsula Dorada", 3600, 14, "./mult/oraculoFloresMisticas.webp", "cartas oraculo de flores")
+        const producto3 = new Producto(3, "Cartas De Tarot Marselles", "Iluminarte", 1198, 5,"./mult/tarotMerselles.webp", "cartas de tarot")
+        const producto4 = new Producto(4, "Cartas Mazo Tarot Español","Arcana Caeli" ,1100, 30,"./mult/tarotEspaniol.webp", "cartas de mazo español")
+        const producto5 = new Producto(5, "Astrologia Psicologia Y Los 4 Elementos", "Kier", 3800, 7,"./mult/astrologiaPsicologiaElementos.webp", "libro")
+        
+        const productos = [producto1, producto2, producto3, producto4, producto5]
+        
+        const divProductos = document.getElementById("divProductos")
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*do{
-        let opcion;       
-        const tierra =["Tauro", "Virgo", "Capricornio"];
-        const aire =["Géminis", "Libra", "Acuario"];
-        const agua =["Cáncer", "Escorpio", "Piscis"];
-        const fuego =["Aries", "Leo", "Sagitario"];
-        opcion = prompt('Ingrese el grupo donde identifique su signo: 🧚🏼​🧚🏼‍♀️​\n\n1 -' + tierra + '\n2 -' + aire + '\n3 -' + agua + '\n4 -' + fuego + '\n\n Para salir ingrese el número 5.')
-            switch (opcion) {
-                case '1':
-                alert('Eres un signo de tierra. 🤎​​​');
-                    break;
-                case '2':
-                alert('Eres un signo de aire.🌀​🌀​🌀​');
-                    break;
-               case '3':
-                alert('Eres un signo de agua. 🌊​💧​🌊​');
-                    break;
-                case '4':
-                alert('Eres un signo de fuego. 🔥🔥​🔥​​');
-                    break;                       
-                case '5':
-                alert('bye bye');
-                    break;
-                default:
-                alert('Ingrese una opción válida');
-                   break;
-                    }
-                }while(opcion !='5')
-                    })
-
- const boton= document.getElementById("boton1");
- boton1.addEventListener('click', ()=>{
-         opcion= prompt('Para saber su suerte en el amor al alazar ingrese 1')
-         let random;
-           switch (opcion) {
-            case '1':
-                random= Math.floor(Math.random() * (3 - 1))+ 1;
-                if(random==1)
-                {
-                    alert('Te va a ir bien en el amor');                  
-                }
-                else
-                {
-                alert('No creemos que te vaya bien en el amor:C');   
-                }
-                break;
-            default:
-                alert('Ingrese una opción válida')
-                break;
-         } 
- }) */               
-
+        productos.forEach(producto => {
+            let productoDiv = document.createElement("div")
+            productoDiv.id =  `producto${producto.id}`
+            productoDiv.className = "card"
+            productoDiv.innerHTML = 
+            `<div class="card" style="width: auto;">
+            <img src="${producto.img}" class="card-img-top" alt="...">
+             <div class="card-body">
+             <h5 class="card-title">${producto.nombre}</h5>
+             <p class="card-text">${producto.marca}</p>
+             <p class="card-text">$${producto.precio}</p>
+            <a href="#" class="btn btn-outline-dark">comprar</a>
+             </div>
+             </div>`
+            divProductos.appendChild(productoDiv)
+        })
+   
