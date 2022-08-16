@@ -15,7 +15,7 @@ jugar.addEventListener('click', () =>
         opcion="4"
     }else{
         opcion="5"    
-    }
+    }//operador lógico or
 
     switch (opcion) {
         case '1':
@@ -36,21 +36,12 @@ jugar.addEventListener('click', () =>
             }
 })
     
-const amor= document.getElementById("amor");
- amor.addEventListener('click', ()=>{
- 
-                let random;
-             random= Math.floor(Math.random() * (3 - 1))+ 1;
-                if(random==1)
-                {
-                document.getElementById("resultadoAmor").innerHTML ="Te va a ir bien en el amor <3​";                  
-                }
-                else
-                {
-                    document.getElementById("resultadoAmor").innerHTML ="No creemos que te vaya bien en el amor:C";   
-                }
+amor.addEventListener('click', ()=>{
+    let random;
+    random= Math.floor(Math.random() * (3 - 1))+ 1;
+    (random==1) ? document.getElementById("resultadoAmor").innerHTML ="Te va a ir bien en el amor <3​" : document.getElementById("resultadoAmor").innerHTML ="No creemos que te vaya bien en el amor:C";
+ }) //simplificación de un if else(operador ternario)
 
-         }  )
    
          class Producto {
             constructor(id, nombre, marca, precio , stock, img, alt) {
