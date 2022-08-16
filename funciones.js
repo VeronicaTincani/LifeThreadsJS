@@ -78,9 +78,18 @@ amor.addEventListener('click', ()=>{
              <h5 class="card-title">${producto.nombre}</h5>
              <p class="card-text">${producto.marca}</p>
              <p class="card-text">$${producto.precio}</p>
-            <a href="#" class="btn btn-outline-dark">comprar</a>
-             </div>
+             <button class="btn btn-outline-dark" id="comprarBtn">Comprar</button>
              </div>`
             divProductos.appendChild(productoDiv)
         })
+      const comprarBtn=document.getElementById("comprarBtn")
+        comprarBtn.addEventListener("click", () => {
+        Swal.fire({
+            icon: 'success',
+            title: '<h3 class="sweetAlert">El producto ha sido agregado al carrito</h3>',
+            footer: '<a class="sweetAlert" href="index.html">Seguir comprando</a>'
+          })
+        })
+       
+        
    
