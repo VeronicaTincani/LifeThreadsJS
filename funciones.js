@@ -7,7 +7,7 @@ jugar.addEventListener('click', () =>
     let opcion=5;
     if (signoIngresado=="tauro"|| signoIngresado=="virgo" ||signoIngresado=="capricornio") {
         opcion="1"
-    } else if(signoIngresado=="geminis"|| signoIngresado=="libra"||signoIngresado=="Acuario") { 
+    } else if(signoIngresado=="geminis"|| signoIngresado=="libra"||signoIngresado=="acuario") { 
         opcion="2"
     }else if(signoIngresado=="cancer"|| signoIngresado=="escorpio" || signoIngresado=="piscis") {
         opcion="3"
@@ -66,30 +66,50 @@ amor.addEventListener('click', ()=>{
         const producto9 = new Producto(9, "El Tarot Paso A Paso", "Marianne Costa", 2950, 10,"https://http2.mlstatic.com/D_NQ_NP_655081-MLA44777314006_022021-O.webp", "libro")
 
         const productos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9]
+        productos.forEach((producto, index) => {
 
-        productos.forEach(producto => {
             let productoDiv = document.createElement("div")
+
             productoDiv.id =  `producto${producto.id}`
+
             productoDiv.className = "card"
+
             productoDiv.innerHTML = 
+
             `<div class="card" style="width: auto;">
+
             <img src="${producto.img}" class="card-img-top" alt="${producto.alt}">
+
              <div class="card-body">
+
              <h5 class="card-title">${producto.nombre}</h5>
+
              <p class="card-text">${producto.marca}</p>
+
              <p class="card-text">$${producto.precio}</p>
-             <button class="btn btn-outline-dark" id="comprarBtn">Comprar</button>
+
+             <button class="btn" id="comprarBtn${producto.id}">Agregar</button>
+
              </div>`
+
             divProductos.appendChild(productoDiv)
+
+            const comprarBtn = document.getElementById(`comprarBtn${producto.id}`)
+
+            comprarBtn.addEventListener("click", () => {
+                agregarAlCarrito(producto.id)
+ 
+            })
         })
-      const comprarBtn=document.getElementById("comprarBtn")
-        comprarBtn.addEventListener("click", () => {
-        Swal.fire({
-            icon: 'success',
-            title: '<h3 class="sweetAlert">El producto ha sido agregado al carrito</h3>',
-            footer: '<a class="sweetAlert" href="index.html">Seguir comprando</a>'
-          })
-        })
+
        
-        
-   
+
+        /*const agregarAlCarrito = (prodId) => {
+             let carrito =[] 
+            const item = productos.find((prod) => prod.id === prodId)
+            carrito.push(item)
+            console.log(carrito)
+        }
+
+        const divProductos = document.getElementById("contenedor-productos")
+        const carritoContenedor = document.getElementById("carrito")*/

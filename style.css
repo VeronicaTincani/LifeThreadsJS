@@ -2,6 +2,8 @@
 body{
     background-color: rgb(240, 195, 230);
     text-align: center;
+   
+    color: #624a74;
 }
 
 .card{
@@ -16,7 +18,7 @@ background: radial-gradient(circle, rgba(238,174,202,0.7791491596638656) 77%, rg
     height: 16rem;
     width: 16rem;
 }
-button{
+.btn{
     
         min-width: 130px;
         height: 40px;
@@ -35,10 +37,70 @@ button{
         margin-top: 16px;
         margin-bottom: 3px;
       
- 
 }
 
 .sweetAlert{
     color: #c797eb;
 
 }
+#carrito{
+    width: 50px;
+    height: 50px;
+    background-color: #c797eb;
+   
+   
+   border: none;
+  }
+
+/*NAVBAR*/
+
+.navbar-brand-carrito{
+margin-left: 95%;
+}
+
+.navbar-brand-titulo{
+font-size: 210%;
+text-decoration: none;
+color: #eedaf1;
+
+}
+navbar-brand-titulo:hover{
+    color: #624a74;
+}
+
+
+.navbar{
+    background-color:#c797eb;
+    
+}
+
+
+
+/*FOOTER*/
+
+footer{
+    transition: background 1.2s;
+    background-color: #c797eb;
+  
+}
+
+
+.footerTexto{
+    color: rgb(72, 55, 73);
+    margin-top: 1%;
+    margin-bottom: 3%;
+    font-family: 'Russo One', sans-serif;
+  font-size: 150%;
+    font-style: italic;
+}
+
+footer img{
+    padding: 0px 10px 0px 34px;
+   
+}
+
+
+  .imgFooter:hover{
+    transform: scale(1.5);
+  }
+
