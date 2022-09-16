@@ -1,22 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
 
 body{
-    background-color: rgb(240, 195, 230);
-    text-align: center;
-   
-    color: #624a74;
+background-image: url("./mult/background.jpg") ;
+/*background-repeat: no-repeat;*/
+background-repeat: no-repeat;
+background-size: 100% 100%;
+text-align: center;
+color: #624a74;
 }
 
+header {
+    background-color: #e6c8d4;
+z-index: 2;
+min-width: 100vw;
+min-height: 5vh;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0px 0px 9px 1px rgb(0 0 0 / 30%);
+margin-bottom: 20px;
+position: fixed;
+}
+main{
+    padding-top: 10vw;
+    z-index: 3;
+}
+#boton-carrito {
+border: none;
+color: rgb(82, 36, 82);
+font-size: 20px;
+background: none;
+border-radius: 50%;
+padding: 10px 20px;
+transition: all .3s;}
+
+
+#boton-carrito:focus {
+    outline: none;}
+
+.boton-agregar {
+    background-color: rgb(117, 82, 116);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+}
+.boton-agregar:hover {
+    cursor: pointer;
+}
+.boton-agregar:focus {
+    outline: none;
+}
+
+.modal-contenedor {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(129, 110, 148, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+  
+}
+
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.modal-carrito {
+    position: relative;
+    background-color: white;
+    min-width: 500px;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all .5s;
+}
+
+.modal-active .modal-carrito {
+    margin-top: 0;
+}
+
+.modal-carrito h3 {
+    color: rgb(139, 97, 125);
+    padding-bottom: 5px;
+}
+.modal-carrito #carritoCerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 10px;
+    color: rgb(106, 26, 126);
+    border: none;
+    background-color: white;
+}
+
+
+.modal-carrito .precioProducto {
+    padding-top: 10px;
+    
+}
+
+.productoEnCarrito {
+    border-left: 5px solid rgb(143, 102, 121);
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.productoEnCarrito:hover {
+    border-left: 5px solid rgb(175, 132, 161);
+}
+
+.boton-eliminar {
+    background: transparent;
+   border: none;
+    
+}
+
+.boton-eliminar:hover {
+    cursor: pointer;
+}
+.boton-eliminar:focus {
+    outline: none;
+}
+
+
+
+
 .card{
-    background: rgb(238,174,202);
-background: radial-gradient(circle, rgba(238,174,202,0.7791491596638656) 77%, rgba(148,187,233,0.8519782913165266) 100%);
-    margin: 10px;
+background: rgba(255, 255, 255, 0.363);
+    
+margin: 10px;
     width: 18rem;
     
 }
 
 .card img{
-    height: 16rem;
-    width: 16rem;
+    height: 15rem;
+    width: 15rem;
 }
 .btn{
     
@@ -33,10 +165,10 @@ background: radial-gradient(circle, rgba(238,174,202,0.7791491596638656) 77%, rg
         border-radius: 5px;
         border: none;
         background-size: 120% auto;
-        background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 75%);
         margin-top: 16px;
         margin-bottom: 3px;
-      
+        background: #daaee0;
+    
 }
 
 .sweetAlert{
@@ -44,13 +176,11 @@ background: radial-gradient(circle, rgba(238,174,202,0.7791491596638656) 77%, rg
 
 }
 #carrito{
-    width: 50px;
-    height: 50px;
-    background-color: #c797eb;
-   
-   
-   border: none;
-  }
+    width: 40px;
+    height: 40px;
+    background: transparent;
+
+}
 
 /*NAVBAR*/
 
@@ -70,8 +200,11 @@ navbar-brand-titulo:hover{
 
 
 .navbar{
-    background-color:#c797eb;
-    
+    background-color:#a686be70;
+    z-index: 2020;
+    height: 56px;
+    padding: 0 16px;
+position: sticky;
 }
 
 
@@ -79,9 +212,7 @@ navbar-brand-titulo:hover{
 /*FOOTER*/
 
 footer{
-    transition: background 1.2s;
-    background-color: #c797eb;
-  
+    background-color: #a686be70
 }
 
 
@@ -90,17 +221,24 @@ footer{
     margin-top: 1%;
     margin-bottom: 3%;
     font-family: 'Russo One', sans-serif;
-  font-size: 150%;
+    font-size: 150%;
     font-style: italic;
 }
 
 footer img{
     padding: 0px 10px 0px 34px;
-   
 }
 
 
-  .imgFooter:hover{
+.imgFooter:hover{
     transform: scale(1.5);
-  }
+}
 
+.carritoImg{
+    width: 50px;
+    height: 60px;}
+
+    #titulo{
+        font-family: 'Neucha', cursive;
+        font-size: 3rem;
+    }
